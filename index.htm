@@ -1,0 +1,119 @@
+<html>
+<head>
+    
+    <meta>
+    
+    </meta>
+    
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            
+        }
+.background{
+  background-color: #ab9455;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+
+
+}
+.pause{
+  background-color: grey;
+  width: 5em;
+  height: 2.3em;
+  cursor: pointer;
+}
+.stop{
+  background-color: red;
+  width: 5em;
+  height: 2.3em;
+  cursor: pointer;
+}
+
+.start{
+  background-color: green;
+  width: 5em;
+  height: 2.3em;
+  cursor: pointer;
+}
+    
+
+
+.timer{
+    background-color: black;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0%;
+    position: absolute;
+    border-radius: 15px;
+    width: 15em;
+    height: 5em;
+}
+
+    </style>
+    
+</head>
+<div class="background">
+<body>
+
+      <div class="timer">
+
+    <h1 class="texto" id="counter" >00:00</h1>
+
+<p><button class="pause" onclick="pause()">Pausar</button>
+
+<button class="start" onclick="start()">Iniciar </button>
+
+<button class="stop" onclick="stop()">Parar</button>
+
+
+</div>
+</p>
+
+<script>
+
+  var sec=00
+  var min=00
+  var Interval
+ 
+function pause(){
+ clearInterval(Interval)
+}
+
+
+function stop(){
+  clearInterval(Interval)
+  
+  document.getElementById('counter').innerText=0+0+':'+0+0
+  sec=00
+  min=00
+  
+}
+
+
+function start(){
+ Interval= setInterval(counter,1000)
+}
+
+function counter(){
+  sec++
+  if(sec==60){
+ min++
+sec=0
+
+ }
+ 
+ 
+ document.getElementById('counter').innerText=min+':'+sec
+}
+
+
+</script>
+
+</body>
+</div>
+</html>
